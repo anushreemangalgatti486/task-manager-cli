@@ -99,7 +99,7 @@ def main():
             print("Thank you for using Task Manager.")
             break
         else:
-            print("Invalid choice. Please select 1-5.")
+            print("Invalid choice. Please select 1-6.")
 
 
 if __name__ == "__main__":
