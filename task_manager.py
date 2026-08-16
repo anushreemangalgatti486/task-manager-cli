@@ -60,7 +60,19 @@ def delete_task():
     except ValueError:
         print("Please enter a valid number.")
 
+def clear_all_tasks():
+    if not tasks:
+        print("No tasks available.")
+        return
 
+    confirmation = input("Are you sure you want to delete all tasks? (y/n): ").lower()
+
+    if confirmation == "y":
+        tasks.clear()
+        print("All tasks deleted successfully.")
+    else:
+        print("Operation cancelled.")
+        
 def main():
     while True:
         print("\n===== TASK MANAGER =====")
@@ -68,7 +80,8 @@ def main():
         print("2. View Tasks")
         print("3. Mark Task as Completed")
         print("4. Delete Task")
-        print("5. Exit")
+        print("5. Clear All Tasks")
+        print("6. Exit")
 
         choice = input("Enter your choice: ")
 
@@ -81,10 +94,12 @@ def main():
         elif choice == "4":
             delete_task()
         elif choice == "5":
+            clear_all_tasks()
+        elif choice == "6":
             print("Thank you for using Task Manager.")
             break
         else:
-            print("Invalid choice. Please select 1-5.")
+            print("Invalid choice. Please select 1-6.")
 
 
 if __name__ == "__main__":
